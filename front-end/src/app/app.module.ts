@@ -5,11 +5,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TestBackEndComponent } from './test-back-end/test-back-end.component';
 import { HttpClientModule} from "@angular/common/http";
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TestBackEndComponent
+    TestBackEndComponent,
+    HeaderComponent,
+    FooterComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
