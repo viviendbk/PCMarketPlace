@@ -1,12 +1,11 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
 @Component({
   selector: 'app-test-back-end',
   templateUrl: './test-back-end.component.html',
   styleUrl: './test-back-end.component.css'
 })
-export class TestBackEndComponent {
+export class TestBackEndComponent implements OnInit {
   constructor(private httpClient: HttpClient) {}
 
   ngOnInit() {
@@ -14,8 +13,9 @@ export class TestBackEndComponent {
   }
 
   callApi() {
-    const apiUrl = 'http://localhost:3000/api/your-endpoint'; // Replace with your API endpoint
+    const apiUrl = 'users';
 
+    console.log("ok")
     this.httpClient.get(apiUrl).subscribe(
         (response) => {
           console.log('API Response:', response);
@@ -26,5 +26,7 @@ export class TestBackEndComponent {
           // Handle the error
         }
     );
+    console.log("ok2")
+
   }
 }

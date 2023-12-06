@@ -15,7 +15,7 @@ usersRoutes.post('/users', async (req: Request, res: Response) => {
 });
 
 // Get all users
-usersRoutes.get('/users', async (req: Request, res: Response) => {
+usersRoutes.get('/api/users', async (req: Request, res: Response) => {
   try {
     const users = await Users.findAll();
     res.json(users);
