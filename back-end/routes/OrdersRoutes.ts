@@ -6,7 +6,7 @@ import PaymentMethods from '../models/PaymentMethods';
 const ordersRoutes = express.Router();
 
 // Create a new order
-ordersRoutes.post('/orders', async (req: Request, res: Response) => {
+ordersRoutes.post('/api/orders', async (req: Request, res: Response) => {
   try {
     const newOrder = await Orders.create(req.body);
     res.status(201).json(newOrder);
@@ -17,7 +17,7 @@ ordersRoutes.post('/orders', async (req: Request, res: Response) => {
 });
 
 // Get all orders
-ordersRoutes.get('/orders', async (req: Request, res: Response) => {
+ordersRoutes.get('/api/orders', async (req: Request, res: Response) => {
   try {
     const orders = await Orders.findAll();
     res.json(orders);
@@ -28,7 +28,7 @@ ordersRoutes.get('/orders', async (req: Request, res: Response) => {
 });
 
 // Get a specific order by ID
-ordersRoutes.get('/orders/:id', async (req: Request, res: Response) => {
+ordersRoutes.get('/api/orders/:id', async (req: Request, res: Response) => {
   const orderId = parseInt(req.params['id'], 10);
 
   try {
@@ -45,7 +45,7 @@ ordersRoutes.get('/orders/:id', async (req: Request, res: Response) => {
 });
 
 // Update an order by ID
-ordersRoutes.put('/orders/:id', async (req: Request, res: Response) => {
+ordersRoutes.put('/api/orders/:id', async (req: Request, res: Response) => {
   const orderId = parseInt(req.params['id'], 10);
 
   try {
@@ -63,7 +63,7 @@ ordersRoutes.put('/orders/:id', async (req: Request, res: Response) => {
 });
 
 // Delete an order by ID
-ordersRoutes.delete('/orders/:id', async (req: Request, res: Response) => {
+ordersRoutes.delete('/api/orders/:id', async (req: Request, res: Response) => {
   const orderId = parseInt(req.params['id'], 10);
 
   try {

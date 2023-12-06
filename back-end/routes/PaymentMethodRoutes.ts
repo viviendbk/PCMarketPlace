@@ -4,7 +4,7 @@ import PaymentMethods from '../models/PaymentMethods';
 const paymentMethodRoutes = express.Router();
 
 // Create a new payment method
-paymentMethodRoutes.post('/paymentMethods', async (req: Request, res: Response) => {
+paymentMethodRoutes.post('/api/paymentMethods', async (req: Request, res: Response) => {
   try {
     const newPaymentMethod = await PaymentMethods.create(req.body);
     res.status(201).json(newPaymentMethod);
@@ -15,7 +15,7 @@ paymentMethodRoutes.post('/paymentMethods', async (req: Request, res: Response) 
 });
 
 // Get all payment methods
-paymentMethodRoutes.get('/paymentMethods', async (req: Request, res: Response) => {
+paymentMethodRoutes.get('/api/paymentMethods', async (req: Request, res: Response) => {
   try {
     const paymentMethods = await PaymentMethods.findAll();
     res.json(paymentMethods);
@@ -26,7 +26,7 @@ paymentMethodRoutes.get('/paymentMethods', async (req: Request, res: Response) =
 });
 
 // Get a specific payment method by ID
-paymentMethodRoutes.get('/paymentMethods/:id', async (req: Request, res: Response) => {
+paymentMethodRoutes.get('/api/paymentMethods/:id', async (req: Request, res: Response) => {
   const paymentMethodId = parseInt(req.params['id'], 10);
 
   try {
@@ -43,7 +43,7 @@ paymentMethodRoutes.get('/paymentMethods/:id', async (req: Request, res: Respons
 });
 
 // Update a payment method by ID
-paymentMethodRoutes.put('/paymentMethods/:id', async (req: Request, res: Response) => {
+paymentMethodRoutes.put('/api/paymentMethods/:id', async (req: Request, res: Response) => {
   const paymentMethodId = parseInt(req.params['id'], 10);
 
   try {
@@ -61,7 +61,7 @@ paymentMethodRoutes.put('/paymentMethods/:id', async (req: Request, res: Respons
 });
 
 // Delete a payment method by ID
-paymentMethodRoutes.delete('/paymentMethods/:id', async (req: Request, res: Response) => {
+paymentMethodRoutes.delete('/api/paymentMethods/:id', async (req: Request, res: Response) => {
   const paymentMethodId = parseInt(req.params['id'], 10);
 
   try {

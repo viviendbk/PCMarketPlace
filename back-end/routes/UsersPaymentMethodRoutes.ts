@@ -6,7 +6,7 @@ import PaymentMethods from '../models/PaymentMethods';
 const usersPaymentMethodRoutes = express.Router();
 
 // Create a new user payment method
-usersPaymentMethodRoutes.post('/usersPaymentMethods', async (req: Request, res: Response) => {
+usersPaymentMethodRoutes.post('/api/usersPaymentMethods', async (req: Request, res: Response) => {
   try {
     const newUserPaymentMethod = await UsersPaymentMethod.create(req.body);
     res.status(201).json(newUserPaymentMethod);
@@ -17,7 +17,7 @@ usersPaymentMethodRoutes.post('/usersPaymentMethods', async (req: Request, res: 
 });
 
 // Get all user payment methods
-usersPaymentMethodRoutes.get('/usersPaymentMethods', async (req: Request, res: Response) => {
+usersPaymentMethodRoutes.get('/api/usersPaymentMethods', async (req: Request, res: Response) => {
   try {
     const userPaymentMethods = await UsersPaymentMethod.findAll();
     res.json(userPaymentMethods);
@@ -28,7 +28,7 @@ usersPaymentMethodRoutes.get('/usersPaymentMethods', async (req: Request, res: R
 });
 
 // Get user payment methods for a specific user ID
-usersPaymentMethodRoutes.get('/users/:userId/paymentMethods', async (req: Request, res: Response) => {
+usersPaymentMethodRoutes.get('/api/users/:userId/paymentMethods', async (req: Request, res: Response) => {
   const userId = parseInt(req.params['userId'], 10);
 
   try {
@@ -45,7 +45,7 @@ usersPaymentMethodRoutes.get('/users/:userId/paymentMethods', async (req: Reques
 });
 
 // Update a user payment method by ID
-usersPaymentMethodRoutes.put('/usersPaymentMethods/:id', async (req: Request, res: Response) => {
+usersPaymentMethodRoutes.put('/api/usersPaymentMethods/:id', async (req: Request, res: Response) => {
   const userPaymentMethodId = parseInt(req.params['id'], 10);
 
   try {
@@ -63,7 +63,7 @@ usersPaymentMethodRoutes.put('/usersPaymentMethods/:id', async (req: Request, re
 });
 
 // Delete a user payment method by ID
-usersPaymentMethodRoutes.delete('/usersPaymentMethods/:id', async (req: Request, res: Response) => {
+usersPaymentMethodRoutes.delete('/api/usersPaymentMethods/:id', async (req: Request, res: Response) => {
   const userPaymentMethodId = parseInt(req.params['id'], 10);
 
   try {

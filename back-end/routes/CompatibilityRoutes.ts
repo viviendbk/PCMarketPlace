@@ -5,7 +5,7 @@ import Items from '../models/Items';
 const compatiblityRoutes = express.Router();
 
 // Create a new compatibility relationship
-compatiblityRoutes.post('/compatibility', async (req: Request, res: Response) => {
+compatiblityRoutes.post('/api/compatibility', async (req: Request, res: Response) => {
   try {
     const newCompatibility = await Compatibility.create(req.body);
     res.status(201).json(newCompatibility);
@@ -16,7 +16,7 @@ compatiblityRoutes.post('/compatibility', async (req: Request, res: Response) =>
 });
 
 // Get all compatibility relationships
-compatiblityRoutes.get('/compatibility', async (req: Request, res: Response) => {
+compatiblityRoutes.get('/api/compatibility', async (req: Request, res: Response) => {
   try {
     const compatibilityList = await Compatibility.findAll();
     res.json(compatibilityList);
@@ -27,7 +27,7 @@ compatiblityRoutes.get('/compatibility', async (req: Request, res: Response) => 
 });
 
 // Get compatibility relationships for a specific item ID
-compatiblityRoutes.get('/items/:itemId/compatibility', async (req: Request, res: Response) => {
+compatiblityRoutes.get('/api/items/:itemId/compatibility', async (req: Request, res: Response) => {
   const itemId = parseInt(req.params['itemId'], 10);
 
   try {
@@ -44,7 +44,7 @@ compatiblityRoutes.get('/items/:itemId/compatibility', async (req: Request, res:
 });
 
 // Update a compatibility relationship by ID
-compatiblityRoutes.put('/compatibility/:id', async (req: Request, res: Response) => {
+compatiblityRoutes.put('/api/compatibility/:id', async (req: Request, res: Response) => {
   const compatibilityId = parseInt(req.params['id'], 10);
 
   try {
@@ -62,7 +62,7 @@ compatiblityRoutes.put('/compatibility/:id', async (req: Request, res: Response)
 });
 
 // Delete a compatibility relationship by ID
-compatiblityRoutes.delete('/compatibility/:id', async (req: Request, res: Response) => {
+compatiblityRoutes.delete('/api/compatibility/:id', async (req: Request, res: Response) => {
   const compatibilityId = parseInt(req.params['id'], 10);
 
   try {
