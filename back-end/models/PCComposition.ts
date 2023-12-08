@@ -6,7 +6,7 @@ import Items from './Items';
 class PCComposition extends Model {
   public PCId!: number;
   public itemId!: number;
-  public quantityiItem!: number;
+  public quantityItem!: number;
 }
 
 PCComposition.init(
@@ -27,7 +27,7 @@ PCComposition.init(
         key: 'itemId',
       },
     },
-    quantityiItem: {
+    quantityItem: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
