@@ -1,0 +1,12 @@
+/* Custom styles for the sign-up card */
+mat-card {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+/* Style for the button */
+button {
+  width: 100%;
+  margin-top: 20px;
+}
