@@ -1,12 +1,12 @@
-/* Custom styles for the sign-up card */
-mat-card {
-  max-width: 400px;
-  margin: 20px auto;
-  padding: 20px;
+mat-form-field {
+  width: 100%;
+  display: block;
 }
 
-/* Style for the button */
-button {
+mat-vertical-stepper {
   width: 100%;
-  margin-top: 20px;
+  max-width: 600px;
+  margin: auto;
 }
+
+

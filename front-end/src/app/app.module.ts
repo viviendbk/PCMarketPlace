@@ -11,9 +11,10 @@ import { HomeComponent } from './home/home.component';
 import { SignUpPageComponent } from './sign-up-page/sign-up-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { ReactiveFormsModule} from "@angular/forms";
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import {MatStepperModule} from '@angular/material/stepper';
 
 @NgModule({
   declarations: [
@@ -30,9 +31,10 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
     HttpClientModule,
     BrowserAnimationsModule,
 
+    ReactiveFormsModule,
     MatInputModule,
     MatButtonModule,
-    MatSlideToggleModule
+    MatStepperModule
   ],
   providers: [],
   bootstrap: [AppComponent]

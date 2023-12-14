@@ -1,15 +1,53 @@
-<mat-form-field appearance="fill">
-  <mat-label>Username</mat-label>
-  <input matInput placeholder="Enter your username">
-</mat-form-field>
+<form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+  <mat-vertical-stepper>
+    <mat-step [stepControl]="signUpForm.controls['username']">
+      <ng-template matStepLabel>Account Information</ng-template>
+      <mat-form-field appearance="fill">
+        <mat-label>Username</mat-label>
+        <input matInput placeholder="Username" formControlName="username">
+      </mat-form-field>
 
-<mat-form-field appearance="fill">
-  <mat-label>Password</mat-label>
-  <input matInput placeholder="Enter your password" type="password">
-</mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Password</mat-label>
+        <input matInput placeholder="Password" type="password" formControlName="password">
+      </mat-form-field>
+      <button mat-button matStepperNext>Next</button>
+    </mat-step>
 
-<button mat-raised-button color="primary">Sign Up</button>
+    <mat-step [stepControl]="signUpForm.controls['firstName']">
+      <ng-template matStepLabel>Personal Information</ng-template>
+      <mat-form-field appearance="fill">
+        <mat-label>First Name</mat-label>
+        <input matInput placeholder="First Name" formControlName="firstName">
+      </mat-form-field>
 
-<mat-slide-toggle>Toggle me!</mat-slide-toggle>
+      <mat-form-field appearance="fill">
+        <mat-label>Last Name</mat-label>
+        <input matInput placeholder="Last Name" formControlName="lastName">
+      </mat-form-field>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button matStepperNext>Next</button>
+    </mat-step>
 
-hello
+    <mat-step>
+      <ng-template matStepLabel>Contact Information</ng-template>
+      <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="Email" formControlName="email">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Phone Number</mat-label>
+        <input matInput placeholder="Phone Number" formControlName="phoneNumber">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Address</mat-label>
+        <input matInput placeholder="Address" formControlName="address">
+      </mat-form-field>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button type="submit">Sign Up</button>
+    </mat-step>
+  </mat-vertical-stepper>
+</form>
+
