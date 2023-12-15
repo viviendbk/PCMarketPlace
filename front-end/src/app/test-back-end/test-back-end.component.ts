@@ -13,7 +13,7 @@ export class TestBackEndComponent implements OnInit {
   }
 
   callApi() {
-    const apiUrl = 'users';
+    const apiUrl = '/api/users';
 
     console.log("ok")
     this.httpClient.get(apiUrl).subscribe(

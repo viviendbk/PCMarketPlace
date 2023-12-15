@@ -55,4 +55,7 @@ app.use(PaymentMethodRoutes_1.default);
 app.get('/api/liveness', (req, res) => {
     res.status(200).send('OK');
 });
+app.get('/api/ok', (req, res) => {
+    res.status(200).send('OK');
+});
 exports.default = app;

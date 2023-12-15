@@ -4,7 +4,7 @@ import Items from '../models/Items';
 const itemsRoutes = express.Router();
 
 // Create a new item
-itemsRoutes.post('/api/items', async (req: Request, res: Response) => {
+itemsRoutes.post('/items', async (req: Request, res: Response) => {
   try {
     const newItem = await Items.create(req.body);
     res.status(201).json(newItem);
@@ -15,7 +15,7 @@ itemsRoutes.post('/api/items', async (req: Request, res: Response) => {
 });
 
 // Get all items
-itemsRoutes.get('/api/items', async (req: Request, res: Response) => {
+itemsRoutes.get('/items', async (req: Request, res: Response) => {
   try {
     const items = await Items.findAll();
     res.json(items);
@@ -26,7 +26,7 @@ itemsRoutes.get('/api/items', async (req: Request, res: Response) => {
 });
 
 // Get a specific item by ID
-itemsRoutes.get('/api/items/:id', async (req: Request, res: Response) => {
+itemsRoutes.get('/items/:id', async (req: Request, res: Response) => {
   const itemId = parseInt(req.params['id'], 10);
 
   try {
@@ -43,7 +43,7 @@ itemsRoutes.get('/api/items/:id', async (req: Request, res: Response) => {
 });
 
 // Update an item by ID
-itemsRoutes.put('/api/items/:id', async (req: Request, res: Response) => {
+itemsRoutes.put('/items/:id', async (req: Request, res: Response) => {
   const itemId = parseInt(req.params['id'], 10);
 
   try {
@@ -61,7 +61,7 @@ itemsRoutes.put('/api/items/:id', async (req: Request, res: Response) => {
 });
 
 // Delete an item by ID
-itemsRoutes.delete('/api/items/:id', async (req: Request, res: Response) => {
+itemsRoutes.delete('/items/:id', async (req: Request, res: Response) => {
   const itemId = parseInt(req.params['id'], 10);
 
   try {

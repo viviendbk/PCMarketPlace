@@ -6,7 +6,7 @@ import Items from '../models/Items';
 const PCCompositionRoutes = express.Router();
 
 // Create a new PC composition
-PCCompositionRoutes.post('/api/pcCompositions', async (req: Request, res: Response) => {
+PCCompositionRoutes.post('/pcCompositions', async (req: Request, res: Response) => {
   try {
     const newPCComposition = await PCComposition.create(req.body);
     res.status(201).json(newPCComposition);
@@ -17,7 +17,7 @@ PCCompositionRoutes.post('/api/pcCompositions', async (req: Request, res: Respon
 });
 
 // Get all PC compositions
-PCCompositionRoutes.get('/api/pcCompositions', async (req: Request, res: Response) => {
+PCCompositionRoutes.get('/pcCompositions', async (req: Request, res: Response) => {
   try {
     const pcCompositions = await PCComposition.findAll();
     res.json(pcCompositions);
@@ -28,7 +28,7 @@ PCCompositionRoutes.get('/api/pcCompositions', async (req: Request, res: Respons
 });
 
 // Get PC compositions for a specific PC ID
-PCCompositionRoutes.get('/api/pcs/:pcId/compositions', async (req: Request, res: Response) => {
+PCCompositionRoutes.get('/pcs/:pcId/compositions', async (req: Request, res: Response) => {
   const pcId = parseInt(req.params['pcId'], 10);
 
   try {
@@ -45,7 +45,7 @@ PCCompositionRoutes.get('/api/pcs/:pcId/compositions', async (req: Request, res:
 });
 
 // Update a PC composition by ID
-PCCompositionRoutes.put('/api/pcCompositions/:id', async (req: Request, res: Response) => {
+PCCompositionRoutes.put('/pcCompositions/:id', async (req: Request, res: Response) => {
   const pcCompositionId = parseInt(req.params['id'], 10);
 
   try {
@@ -63,7 +63,7 @@ PCCompositionRoutes.put('/api/pcCompositions/:id', async (req: Request, res: Res
 });
 
 // Delete a PC composition by ID
-PCCompositionRoutes.delete('/api/pcCompositions/:id', async (req: Request, res: Response) => {
+PCCompositionRoutes.delete('/pcCompositions/:id', async (req: Request, res: Response) => {
   const pcCompositionId = parseInt(req.params['id'], 10);
 
   try {
