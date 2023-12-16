@@ -6,7 +6,7 @@ import Items from '../models/Items';
 const ordersItemsRoutes = express.Router();
 
 // Create a new order item
-ordersItemsRoutes.post('/api/ordersItems', async (req: Request, res: Response) => {
+ordersItemsRoutes.post('/ordersItems', async (req: Request, res: Response) => {
   try {
     const newOrderItem = await OrdersItems.create(req.body);
     res.status(201).json(newOrderItem);
@@ -17,7 +17,7 @@ ordersItemsRoutes.post('/api/ordersItems', async (req: Request, res: Response) =
 });
 
 // Get all order items
-ordersItemsRoutes.get('/api/ordersItems', async (req: Request, res: Response) => {
+ordersItemsRoutes.get('/ordersItems', async (req: Request, res: Response) => {
   try {
     const orderItems = await OrdersItems.findAll();
     res.json(orderItems);
@@ -28,7 +28,7 @@ ordersItemsRoutes.get('/api/ordersItems', async (req: Request, res: Response) =>
 });
 
 // Get order items for a specific order ID
-ordersItemsRoutes.get('/api/orders/:orderId/items', async (req: Request, res: Response) => {
+ordersItemsRoutes.get('/orders/:orderId/items', async (req: Request, res: Response) => {
   const orderId = parseInt(req.params['orderId'], 10);
 
   try {
@@ -45,7 +45,7 @@ ordersItemsRoutes.get('/api/orders/:orderId/items', async (req: Request, res: Re
 });
 
 // Update an order item by ID
-ordersItemsRoutes.put('/api/ordersItems/:id', async (req: Request, res: Response) => {
+ordersItemsRoutes.put('/ordersItems/:id', async (req: Request, res: Response) => {
   const orderItemId = parseInt(req.params['id'], 10);
 
   try {
@@ -63,7 +63,7 @@ ordersItemsRoutes.put('/api/ordersItems/:id', async (req: Request, res: Response
 });
 
 // Delete an order item by ID
-ordersItemsRoutes.delete('/api/ordersItems/:id', async (req: Request, res: Response) => {
+ordersItemsRoutes.delete('/ordersItems/:id', async (req: Request, res: Response) => {
   const orderItemId = parseInt(req.params['id'], 10);
 
   try {

@@ -26,7 +26,7 @@ PCComposition.init({
             key: 'itemId',
         },
     },
-    quantityiItem: {
+    quantityItem: {
         type: sequelize_1.DataTypes.INTEGER,
         allowNull: false,
     },

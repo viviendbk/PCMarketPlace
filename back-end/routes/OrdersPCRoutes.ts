@@ -6,7 +6,7 @@ import PC from '../models/PC';
 const orderPCRoutes = express.Router();
 
 // Create a new order PC
-orderPCRoutes.post('/api/ordersPCs', async (req: Request, res: Response) => {
+orderPCRoutes.post('/ordersPCs', async (req: Request, res: Response) => {
   try {
     const newOrderPC = await OrdersPC.create(req.body);
     res.status(201).json(newOrderPC);
@@ -17,7 +17,7 @@ orderPCRoutes.post('/api/ordersPCs', async (req: Request, res: Response) => {
 });
 
 // Get all order PCs
-orderPCRoutes.get('/api/ordersPCs', async (req: Request, res: Response) => {
+orderPCRoutes.get('/ordersPCs', async (req: Request, res: Response) => {
   try {
     const orderPCs = await OrdersPC.findAll();
     res.json(orderPCs);
@@ -28,7 +28,7 @@ orderPCRoutes.get('/api/ordersPCs', async (req: Request, res: Response) => {
 });
 
 // Get order PCs for a specific order ID
-orderPCRoutes.get('/api/orders/:orderId/pcs', async (req: Request, res: Response) => {
+orderPCRoutes.get('/orders/:orderId/pcs', async (req: Request, res: Response) => {
   const orderId = parseInt(req.params['orderId'], 10);
 
   try {
@@ -45,7 +45,7 @@ orderPCRoutes.get('/api/orders/:orderId/pcs', async (req: Request, res: Response
 });
 
 // Update an order PC by ID
-orderPCRoutes.put('/api/ordersPCs/:id', async (req: Request, res: Response) => {
+orderPCRoutes.put('/ordersPCs/:id', async (req: Request, res: Response) => {
   const orderPCId = parseInt(req.params['id'], 10);
 
   try {
@@ -63,7 +63,7 @@ orderPCRoutes.put('/api/ordersPCs/:id', async (req: Request, res: Response) => {
 });
 
 // Delete an order PC by ID
-orderPCRoutes.delete('/api/ordersPCs/:id', async (req: Request, res: Response) => {
+orderPCRoutes.delete('/ordersPCs/:id', async (req: Request, res: Response) => {
   const orderPCId = parseInt(req.params['id'], 10);
 
   try {

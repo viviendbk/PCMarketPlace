@@ -5,7 +5,7 @@ import PCComposition from '../models/PCComposition';
 const PCRoutes = express.Router();
 
 // Create a new PC
-PCRoutes.post('/api/pcs', async (req: Request, res: Response) => {
+PCRoutes.post('/pcs', async (req: Request, res: Response) => {
   try {
     const newPC = await PC.create(req.body);
     res.status(201).json(newPC);
@@ -16,7 +16,7 @@ PCRoutes.post('/api/pcs', async (req: Request, res: Response) => {
 });
 
 // Get all PCs
-PCRoutes.get('/api/pcs', async (req: Request, res: Response) => {
+PCRoutes.get('/pcs', async (req: Request, res: Response) => {
   try {
     const pcs = await PC.findAll();
     res.json(pcs);
@@ -27,7 +27,7 @@ PCRoutes.get('/api/pcs', async (req: Request, res: Response) => {
 });
 
 // Get a specific PC by ID
-PCRoutes.get('/api/pcs/:id', async (req: Request, res: Response) => {
+PCRoutes.get('/pcs/:id', async (req: Request, res: Response) => {
   const pcId = parseInt(req.params['id'], 10);
 
   try {
@@ -44,7 +44,7 @@ PCRoutes.get('/api/pcs/:id', async (req: Request, res: Response) => {
 });
 
 // Update a PC by ID
-PCRoutes.put('/api/pcs/:id', async (req: Request, res: Response) => {
+PCRoutes.put('/pcs/:id', async (req: Request, res: Response) => {
   const pcId = parseInt(req.params['id'], 10);
 
   try {
@@ -62,7 +62,7 @@ PCRoutes.put('/api/pcs/:id', async (req: Request, res: Response) => {
 });
 
 // Delete a PC by ID
-PCRoutes.delete('/api/pcs/:id', async (req: Request, res: Response) => {
+PCRoutes.delete('/pcs/:id', async (req: Request, res: Response) => {
   const pcId = parseInt(req.params['id'], 10);
 
   try {

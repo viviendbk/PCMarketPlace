@@ -12,6 +12,7 @@ export class SignUpPageComponent {
 
   constructor(private formBuilder: FormBuilder, private http: HttpClient) {
     this.signUpForm = this.formBuilder.group({
+      userId: 1,
       username: ['', Validators.required],
       password: ['', Validators.required],
       firstName: ['', Validators.required],
@@ -25,7 +26,7 @@ export class SignUpPageComponent {
   onSubmit() {
     if (this.signUpForm.valid) {
       console.log(this.signUpForm.value)
-      this.http.post('users', this.signUpForm.value)
+      this.http.post('/api/users', this.signUpForm.value)
         .subscribe(
           response => {
             console.log('User created successfully', response);

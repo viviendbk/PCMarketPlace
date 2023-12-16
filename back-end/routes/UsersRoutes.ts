@@ -4,7 +4,7 @@ import Users from '../models/Users';
 const usersRoutes = express.Router();
 
 // Create a new user
-usersRoutes.post('/api/users', async (req: Request, res: Response) => {
+usersRoutes.post('/users', async (req: Request, res: Response) => {
   try {
     const newUser = await Users.create(req.body);
     res.status(201).json(newUser);
@@ -15,7 +15,7 @@ usersRoutes.post('/api/users', async (req: Request, res: Response) => {
 });
 
 // Get all users
-usersRoutes.get('/api/users', async (req: Request, res: Response) => {
+usersRoutes.get('/users', async (req: Request, res: Response) => {
   try {
     const users = await Users.findAll();
     res.json(users);
@@ -26,7 +26,7 @@ usersRoutes.get('/api/users', async (req: Request, res: Response) => {
 });
 
 // Get a specific user by ID
-usersRoutes.get('/api/users/:id', async (req: Request, res: Response) => {
+usersRoutes.get('/users/:id', async (req: Request, res: Response) => {
   const userId = parseInt(req.params['id'], 10);
 
   try {
@@ -43,7 +43,7 @@ usersRoutes.get('/api/users/:id', async (req: Request, res: Response) => {
 });
 
 // Update a user by ID
-usersRoutes.put('/api/users/:id', async (req: Request, res: Response) => {
+usersRoutes.put('/users/:id', async (req: Request, res: Response) => {
   const userId = parseInt(req.params['id'], 10);
 
   try {
@@ -61,7 +61,7 @@ usersRoutes.put('/api/users/:id', async (req: Request, res: Response) => {
 });
 
 // Delete a user by ID
-usersRoutes.delete('/api/users/:id', async (req: Request, res: Response) => {
+usersRoutes.delete('/users/:id', async (req: Request, res: Response) => {
   const userId = parseInt(req.params['id'], 10);
 
   try {

@@ -49,6 +49,9 @@ app.get('/api/liveness', (req: Request, res: Response) => {
   res.status(200).send('OK');
 });
 
+app.get('/api/ok', (req: Request, res: Response) => {
+  res.status(200).send('OK');
+});
 export default app;
 
 

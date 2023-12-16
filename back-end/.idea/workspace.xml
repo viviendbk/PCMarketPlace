@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="62c6a6de-d694-4226-aaae-9efde2d70b3b" name="Changes" comment="">
+    <list default="true" id="62c6a6de-d694-4226-aaae-9efde2d70b3b" name="Changes" comment="fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/PCComposition.ts" beforeDir="false" afterPath="$PROJECT_DIR$/models/PCComposition.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,8 +48,17 @@
       <updated>1701870437804</updated>
       <workItem from="1701870438924" duration="394000" />
       <workItem from="1701950622787" duration="1461000" />
-      <workItem from="1702040171985" duration="184000" />
+      <workItem from="1702040171985" duration="1329000" />
     </task>
+    <task id="LOCAL-00001" summary="fix">
+      <option name="closed" value="true" />
+      <created>1702040463031</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1702040463032</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -80,5 +88,9 @@
         <option value="$PROJECT_DIR$/models/Compatibility.js" />
       </list>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix" />
   </component>
 </project>
