@@ -16,6 +16,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import {MatStepperModule} from '@angular/material/stepper';
 import { ProductPageComponent } from './product-page/product-page.component';
+import { LoginPageComponent } from './login-page/login-page.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ProductPageComponent } from './product-page/product-page.component';
     FooterComponent,
     HomeComponent,
     SignUpPageComponent,
-    ProductPageComponent
+    ProductPageComponent,
+    LoginPageComponent
   ],
   imports: [
     BrowserModule,
