@@ -15,6 +15,8 @@ import { ReactiveFormsModule} from "@angular/forms";
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import {MatStepperModule} from '@angular/material/stepper';
+import { ProductPageComponent } from './product-page/product-page.component';
+import { LoginPageComponent } from './login-page/login-page.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import {MatStepperModule} from '@angular/material/stepper';
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    SignUpPageComponent
+    SignUpPageComponent,
+    ProductPageComponent,
+    LoginPageComponent
   ],
   imports: [
     BrowserModule,

@@ -78,4 +78,21 @@ usersRoutes.delete('/users/:id', async (req: Request, res: Response) => {
   }
 });
 
+usersRoutes.post('/login', async (req: Request, res: Response) => {
+  const { email, password } = req.body;
+
+  try {
+    const user = await Users.findOne({ where: { email: email } });
+    if (user && user.password === password) { // Replace with secure password check
+      res.json({ message: 'Login successful', user: user });
+    } else {
+      res.status(401).json({ error: 'Wrong credentials' });
+    }
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
+
 export default usersRoutes;
