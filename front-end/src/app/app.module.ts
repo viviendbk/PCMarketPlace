@@ -17,6 +17,7 @@ import { MatButtonModule } from '@angular/material/button';
 import {MatStepperModule} from '@angular/material/stepper';
 import { ProductPageComponent } from './product-page/product-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
+import { CartPageComponent } from './cart-page/cart-page.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { LoginPageComponent } from './login-page/login-page.component';
     HomeComponent,
     SignUpPageComponent,
     ProductPageComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    CartPageComponent
   ],
   imports: [
     BrowserModule,
