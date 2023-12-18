@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {HttpClient} from "@angular/common/http";
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-login-page',
@@ -11,7 +12,7 @@ import {HttpClient} from "@angular/common/http";
 export class LoginPageComponent {
   loginForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private http: HttpClient) {
+  constructor(private formBuilder: FormBuilder, private http: HttpClient, private snackBar: MatSnackBar) {
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required]
@@ -25,6 +26,9 @@ export class LoginPageComponent {
         .subscribe(
           response => {
             console.log('Login successful', response);
+            this.snackBar.open('Login Successful', 'Close', {
+              duration: 3000, // Duration in milliseconds (3 seconds)
+            });
             // Handle successful login here
           },
           error => {
