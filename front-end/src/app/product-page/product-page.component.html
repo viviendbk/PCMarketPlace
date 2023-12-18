@@ -1,27 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Product Page</title>
-  <!-- Add your CSS links here -->
-</head>
-<body>
-
-<div class="container">
-  <h1>Our Products</h1>
-  <div class="product-list">
-    <!-- Example of a single product -->
-    <div class="product-item">
-      <img src="path-to-product-image.jpg" alt="Product Image">
-      <h2>Product Name</h2>
-      <p>Product Description</p>
-      <span>Price: $XX.XX</span>
-      <button>Add to Cart</button>
-    </div>
-    <!-- Repeat the above block for each product -->
+<div class="product-container">
+  <div *ngFor="let product of products" class="product-card">
+    <img [src]="product.image" alt="Product Image">
+    <h3>{{ product.name }}</h3>
+    <p>{{ product.description }}</p>
+    <p>Prix: {{ product.price }}€</p>
+    <button (click)="addToCart(product)">Ajouter au Panier</button>
   </div>
 </div>
-
-<!-- Add your JavaScript links here -->
-
-</body>
-</html>

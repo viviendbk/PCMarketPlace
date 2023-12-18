@@ -90,4 +90,20 @@ usersRoutes.delete('/users/:id', (req, res) => __awaiter(void 0, void 0, void 0,
         res.status(500).json({ error: 'Internal Server Error' });
     }
 }));
+usersRoutes.post('/login', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const { email, password } = req.body;
+    try {
+        const user = yield Users_1.default.findOne({ where: { email: email } });
+        if (user && user.password === password) { // Replace with secure password check
+            res.json({ message: 'Login successful', user: user });
+        }
+        else {
+            res.status(401).json({ error: 'Wrong credentials' });
+        }
+    }
+    catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+}));
 exports.default = usersRoutes;
