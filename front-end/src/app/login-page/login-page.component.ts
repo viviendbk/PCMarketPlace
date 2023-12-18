@@ -26,9 +26,6 @@ export class LoginPageComponent {
         .subscribe(
           response => {
             console.log('Login successful', response);
-            this.snackBar.open('Login Successful', 'Close', {
-              duration: 3000, // Duration in milliseconds (3 seconds)
-            });
             // Handle successful login here
           },
           error => {
