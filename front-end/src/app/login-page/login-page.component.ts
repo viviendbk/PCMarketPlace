@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {HttpClient} from "@angular/common/http";
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-page',
@@ -12,7 +12,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class LoginPageComponent {
   loginForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private http: HttpClient, private snackBar: MatSnackBar) {
+  constructor(private formBuilder: FormBuilder, private http: HttpClient, private router: Router) {
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required]
@@ -26,6 +26,7 @@ export class LoginPageComponent {
         .subscribe(
           response => {
             console.log('Login successful', response);
+            this.router.navigate(['/']);
             // Handle successful login here
           },
           error => {
