@@ -14,8 +14,8 @@ const sequelize = new sequelize_1.Sequelize({
     database: 'PCMarketPlaceDB',
     username: 'PcMarketPlaceDBUser',
     password: 'root',
-    host: 'localhost', // Database host (e.g., 'localhost')
-    dialect: 'postgres', // Specify the PostgreSQL dialect
+    host: 'localhost',
+    dialect: 'postgres',
     port: 5432, // Default PostgreSQL port
 });
 (() => __awaiter(void 0, void 0, void 0, function* () {
