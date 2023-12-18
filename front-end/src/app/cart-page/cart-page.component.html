@@ -1,9 +1,9 @@
 <div class="cart-container">
   <div *ngFor="let item of cartItems" class="cart-item">
-    <h3>{{ item.product.name }}</h3>
-    <p>Quantité: {{ item.quantity }}</p>
-    <p>Prix: {{ item.product.price }}€</p>
-    <button (click)="removeFromCart(item.product)">Retirer</button>
+    <h3>{{ item.name }}</h3>
+    <p>Quantité: </p>
+    <p>Prix: {{ item.price }}€</p>
+    <button (click)="removeFromCart(item)">Retirer</button>
   </div>
   <div class="total">
     <p>Total: {{ total }}€</p>

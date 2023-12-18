@@ -7,25 +7,36 @@ import { Product } from '../models/product.model';
 export class CartService {
   private items: Product[] = [];
 
-  constructor() { }
+  constructor() {
+    this.loadCartItems();
+  }
 
   addToCart(product: Product): void {
     this.items.push(product);
+    this.saveCartItems();
   }
 
   removeFromCart(product: Product): void {
     this.items = this.items.filter(item => item.id !== product.id);
+    this.saveCartItems();
   }
 
   getItems(): Product[] {
     return this.items;
   }
 
+  private saveCartItems(): void {
+    localStorage.setItem('cart', JSON.stringify(this.items));
+  }
+
   getTotalPrice(): number {
     return this.items.reduce((total, item) => total + item.price, 0);
   }
 
-  clearCart(): void {
-    this.items = [];
+  private loadCartItems(): void {
+    const savedCart = localStorage.getItem('cart');
+    if (savedCart) {
+      this.items = JSON.parse(savedCart);
+    }
   }
 }
