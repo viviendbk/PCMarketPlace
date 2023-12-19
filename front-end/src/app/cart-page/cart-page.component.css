@@ -1,0 +1,27 @@
+.cart-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+
+.cart-item {
+  border: 1px solid #ddd;
+  padding: 15px;
+  text-align: center;
+  margin-bottom: 20px;
+  width: 300px; /* Ajustez la largeur selon vos besoins */
+}
+
+.cart-item img {
+  max-width: 100%;
+  height: auto;
+}
+
+.total {
+  border: 1px solid #ddd;
+  padding: 15px;
+  text-align: center;
+  width: 300px; /* Ajustez la largeur selon vos besoins */
+  margin-top: 20px;
+}

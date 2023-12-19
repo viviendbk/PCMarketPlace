@@ -1,7 +1,9 @@
 <div class="cart-container">
   <div *ngFor="let item of cartItems" class="cart-item">
+    <img [src]="item.image" alt="Product Image">
     <h3>{{ item.name }}</h3>
-    <p>Quantité: </p>
+    <p>{{item.cat}}</p>
+    <!--<p>Quantité: </p>-->
     <p>Prix: {{ item.price }}€</p>
     <button (click)="removeFromCart(item)">Retirer</button>
   </div>

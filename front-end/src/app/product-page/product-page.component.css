@@ -30,3 +30,9 @@
   border-bottom: 1px solid #ddd;
   padding-bottom: 10px;
 }
+
+footer {
+  margin-top: auto; /* Le pied de page est positionné en bas de la page */
+  background-color: #f0f0f0; /* Ajoutez une couleur de fond au pied de page si nécessaire */
+  padding: 20px;
+}
