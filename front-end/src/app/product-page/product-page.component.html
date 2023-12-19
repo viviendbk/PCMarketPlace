@@ -1,9 +1,12 @@
-<div class="product-container">
-  <div *ngFor="let product of products" class="product-card">
-    <img [src]="product.image" alt="Product Image">
-    <h3>{{ product.name }}</h3>
-    <p>{{ product.description }}</p>
-    <p>Prix: {{ product.price }}€</p>
-    <button (click)="addToCart(product)">Ajouter au Panier</button>
+<div *ngFor="let category of getUniqueCategories()" class="category-container">
+  <h2>{{ category }}</h2>
+  <div class="product-container">
+    <div *ngFor="let product of productsByCategory(category)" class="product-card">
+      <img [src]="product.image" height="300" width="198" alt="Product Image">
+      <h3>{{ product.name }}</h3>
+      <p>{{ product.description }}</p>
+      <p>Prix: {{ product.price }}€</p>
+      <button (click)="addToCart(product)">Ajouter au Panier</button>
+    </div>
   </div>
 </div>

@@ -1,0 +1,32 @@
+.category-container {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.product-card {
+  border: 1px solid #ddd;
+  padding: 15px;
+  text-align: center;
+  height: 300px; /* Adjust the height as needed */
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.category-container h2 {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}

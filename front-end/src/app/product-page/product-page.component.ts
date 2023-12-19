@@ -17,7 +17,15 @@ export class ProductPageComponent implements OnInit {
   ngOnInit(): void {
     this.products = this.productsService.getProducts();
   }
+  getUniqueCategories(): string[] {
+    const categories = new Set<string>();
+    this.products.forEach(product => categories.add(product.cat));
+    return Array.from(categories);
+  }
 
+  productsByCategory(category: string): any[] {
+    return this.products.filter(product => product.cat === category);
+  }
   addToCart(product: Product): void {
     this.cartService.addToCart(product);
     alert('Produit ajouté au panier!');
