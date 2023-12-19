@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {HttpClient} from "@angular/common/http";
 import {MatSnackBar} from "@angular/material/snack-bar";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-up-page',
@@ -11,7 +12,11 @@ import {MatSnackBar} from "@angular/material/snack-bar";
 export class SignUpPageComponent {
   signUpForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private http: HttpClient, private snackBar: MatSnackBar) {
+  constructor(
+    private formBuilder: FormBuilder,
+    private http: HttpClient,
+    private snackBar: MatSnackBar,
+    private router: Router) {
     this.signUpForm = this.formBuilder.group({
       userId: 1,
       username: ['', Validators.required],
@@ -31,10 +36,11 @@ export class SignUpPageComponent {
         .subscribe(
           response => {
             console.log('User created successfully', response);
+            // Handle successful response here (e.g., navigate to login or show a success message)
+            this.router.navigate(['/login']);
             this.snackBar.open('Account Created Successfully', 'Close', {
               duration: 3000, // Duration in milliseconds (3 seconds)
             });
-            // Handle successful response here (e.g., navigate to login or show a success message)
           },
           error => {
             console.error('Error occurred while creating user', error);

@@ -19,6 +19,8 @@ import { ProductPageComponent } from './product-page/product-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { CartPageComponent } from './cart-page/cart-page.component';
+import {MatIconModule} from "@angular/material/icon";
+import { STEPPER_GLOBAL_OPTIONS} from "@angular/cdk/stepper";
 
 @NgModule({
   declarations: [
@@ -42,9 +44,15 @@ import { CartPageComponent } from './cart-page/cart-page.component';
     MatInputModule,
     MatButtonModule,
     MatStepperModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatIconModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: STEPPER_GLOBAL_OPTIONS,
+      useValue: { displayDefaultIndicatorType: false }
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
